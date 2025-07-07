@@ -111,19 +111,22 @@
 
         <section id="contact">
             <h2>お問い合わせ</h2>
-            <form action="mailto:kfreelance0714@gmail.com" method="POST" enctype="text/plain">
+            <!-- FormspreeをHTTPSで使用して送信をセキュアに -->
+            <form action="https://formspree.io/f/yourFormID" method="POST">
                 <label for="name">お名前</label>
-                <input type="text" id="name" name="Name" required />
+                <input type="text" id="name" name="name" required />
 
                 <label for="email">メールアドレス</label>
-                <input type="email" id="email" name="Email" required />
+                <input type="email" id="email" name="_replyto" required />
 
                 <label for="message">メッセージ</label>
-                <textarea id="message" name="Message" rows="6" required></textarea>
+                <textarea id="message" name="message" rows="6" required></textarea>
 
+                <!-- Formspree用の隠しフィールド -->
+                <input type="hidden" name="_subject" value="[お問い合わせ] kfreelance" />
                 <button type="submit">送信</button>
             </form>
-            <p>※ メールクライアントが起動しない場合は、直接 <a href="mailto:kfreelance0714@gmail.com">kfreelance0714@gmail.com</a> までご連絡ください。</p>
+            <p>メールクライアントが起動しない場合やより確実に受信したい場合は、<br><a href="mailto:kfreelance0714@gmail.com">kfreelance0714@gmail.com</a> まで直接ご連絡ください。</p>
         </section>
     </main>
 

@@ -315,32 +315,20 @@
       });
     </script>
     <script>
-      // namespace と key はサイトごとにユニークな文字列にしてください
-      const namespace = 'kfreelance.github.io';
-      const key       = 'homepage-visits';
-
-      // 訪問ごとに +1 し、その最新値を取得して表示
-      fetch(`https://api.countapi.xyz/update/${namespace}/${key}?amount=1`)
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('visitCount').innerText = data.value;
-        })
-        .catch(err => {
-          console.error('CountAPI error:', err);
-          document.getElementById('visitCount').innerText = '取得失敗';
-        });
-    </script>    
-    <script>
-      const url = 'https://api.countapi.xyz/hit/kfreelance.github.io/homepage-visits';
-      fetch(url)
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('visitCount').innerText = data.value;
-        })
-        .catch(err => {
-          console.error('CountAPI hit error:', err);
-          document.getElementById('visitCount').innerText = '取得失敗';
-        });
-    </script>    
+      // JSONP 用のコールバック関数（global scope）
+      function countCallback(data) {
+        document.getElementById('visitCount').innerText = data.value;
+      }
+    
+      // script タグを動的に生成して JSONP リクエスト
+      (function() {
+        const namespace = 'kfreelance.github.io';  // あなたのサイト用にユニーク
+        const key       = 'homepage-visits';       // カウント用キー
+        const url = `https://api.countapi.xyz/hit/${namespace}/${key}?callback=countCallback`;
+        const s   = document.createElement('script');
+        s.src     = url;
+        document.body.appendChild(s);
+      })();
+    </script>
   </body>
 </html>

@@ -298,9 +298,7 @@
       </section>
       <section id="stats">
         <h2>訪問者数</h2>
-        <p>
-          当サイトの累計訪問者数：<strong><span id="visitCount">読み込み中…</span></strong> 人
-        </p>
+        <p>累計訪問者数：<strong><span id="visitCount">読み込み中…</span></strong> 人</p>
       </section>
     </main>
 
@@ -329,6 +327,18 @@
         })
         .catch(err => {
           console.error('CountAPI error:', err);
+          document.getElementById('visitCount').innerText = '取得失敗';
+        });
+    </script>    
+    <script>
+      const url = 'https://api.countapi.xyz/hit/kfreelance.github.io/homepage-visits';
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('visitCount').innerText = data.value;
+        })
+        .catch(err => {
+          console.error('CountAPI hit error:', err);
           document.getElementById('visitCount').innerText = '取得失敗';
         });
     </script>    

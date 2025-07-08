@@ -157,11 +157,14 @@
       }
     </style>
   </head>
+
   <body>
     <!-- ===== Header (Nav) ===== -->
     <header>
       <nav class="container">
-        <div class="logo"><h1>K-freelance</h1></div>
+        <div class="logo">
+          <h1>K-freelance</h1>
+        </div>
         <div class="menu">
           <a href="#profile">プロフィール</a>
           <a href="#services">サービス</a>
@@ -179,14 +182,19 @@
         <p>料金の目安は下記例を参考にしていただければ幸いです。</p>
         <p>お問い合わせフォームよりお気軽にご相談ください。</p>
       </section>
+
       <!-- Profile Section -->
       <section id="profile">
         <h2>プロフィール</h2>
         <p>
-          学部・大学院で物理学を専攻し、理論研究を通じてシミュレーションに取り組んできました。<br />
-          さらに実測データの解析にも携わり、時系列データ解析や機械学習など、多様なデータサイエンススキルを習得しています。<br />
-          現職に就職後、プログラム開発・システム設計・インフラ構築まで幅広い分野で経験を積み、実践的な技術力を磨いてきました。<br />
-          この事業を通じて、独立したフリーランスエンジニアとしての市場価値を高めていきたいと思い始めました。
+          学部・大学院で物理学を専攻し、理論研究を通じてシミュレーションに
+          取り組んできました。<br />
+          さらに実測データの解析にも携わり、時系列データ解析や機械学習など、
+          多様なデータサイエンススキルを習得しています。<br />
+          現職に就職後、プログラム開発・システム設計・インフラ構築まで幅広い
+          分野で経験を積み、実践的な技術力を磨いてきました。<br />
+          この事業を通じて、独立したフリーランスエンジニアとしての市場価値を
+          高めていきたいと思い始めました。
         </p>
       </section>
 
@@ -194,23 +202,20 @@
       <section id="services">
         <h2>サービス</h2>
         <p>1人で完結できるため、人件費を抑えられた料金となっています。</p>
-        <br />
         <div class="grid">
           <div class="card">
             <h3>データ解析・評価 <span class="price">¥50,000～</span></h3>
-            <br />
             <p>
               提供いただいたデータをもとに、ご要望に応じた解析を実施します。<br />
-              数理統計に基づく定量的評価や、定性的評価など必要に応じたレポートをご提供します。
+              数理統計に基づく定量的評価や、定性的評価など必要に応じたレポートを
+              ご提供します。
             </p>
           </div>
           <div class="card">
             <h3>コード開発・修正 <span class="price">¥80,000～</span></h3>
-            <br />
             <p>
               新規コードの作成、既存コードの修正・高速処理化・言語変換などを承ります。
             </p>
-
             <details style="margin-top: 10px; text-align: left">
               <summary style="cursor: pointer; font-weight: bold">
                 対応可能言語例を見る
@@ -223,30 +228,22 @@
           </div>
           <div class="card">
             <h3>ツール制作・販売 <span class="price">¥100,000～</span></h3>
-            <br />
             <p>
-              業務効率化ツールや、データ解析・評価ツール、形式変換ツールなど、<br />
-              お客様の要望に合わせたオーダーメイドのカスタムツールを企画・開発し、ご提供します。<br />
-              導入後のサポートまで、使いやすさにこだわったサービスです。
+              業務効率化ツールや、データ解析・評価ツール、形式変換ツールなど、
+              お客様の要望に合わせたオーダーメイドのカスタムツールを企画・開発し、
+              ご提供します。導入後のサポートまで、使いやすさにこだわったサービスです。
             </p>
           </div>
           <div class="card">
-            <h3>
-              システム構築
-              <span class="price">¥100,000～</span>
-            </h3>
-            <br />
+            <h3>システム構築 <span class="price">¥100,000～</span></h3>
             <p>
-              要件定義から基本設計・詳細設計、ネットワーク構築、サーバ構築、運用・保守まで
-              フルスタックエンジニアリングを一貫してご提供します。<br />
+              要件定義から基本設計・詳細設計、ネットワーク構築、サーバ構築、
+              運用・保守までフルスタックエンジニアリングを一貫してご提供します。
             </p>
           </div>
           <div class="card">
             <h3>文書作成 <span class="price">¥20,000～</span></h3>
-            <br />
-            <p>
-              技術文書や報告書の作成に加え、LaTeXの修正・編集対応も可能です。
-            </p>
+            <p>技術文書や報告書の作成に加え、LaTeXの修正・編集対応も可能です。</p>
           </div>
         </div>
       </section>
@@ -296,9 +293,14 @@
           までご連絡ください。
         </p>
       </section>
+
+      <!-- Visitor Count Section -->
       <section id="stats">
         <h2>訪問者数</h2>
-        <p>累計訪問者数：<strong><span id="visitCount">読み込み中…</span></strong> 人</p>
+        <p>
+          累計訪問者数：
+          <strong><span id="visitCount">読み込み中…</span></strong> 人
+        </p>
       </section>
     </main>
 
@@ -307,26 +309,31 @@
       <p>&copy; 2025 kfreelance. All rights reserved.</p>
     </footer>
 
-    <!-- Toggle Languages Script -->
+    <!-- Toggle Languages Script（ボタンがあれば動かす） -->
     <script>
-      document.getElementById("langBtn").addEventListener("click", function () {
-        var list = document.getElementById("langList");
-        list.style.display = list.style.display === "none" ? "block" : "none";
-      });
-    </script>
-    <script>
-      // JSONP 用のコールバック関数（global scope）
-      function countCallback(data) {
-        document.getElementById('visitCount').innerText = data.value;
+      const langBtn = document.getElementById("langBtn");
+      if (langBtn) {
+        langBtn.addEventListener("click", () => {
+          const list = document.getElementById("langList");
+          list.style.display = list.style.display === "none" ? "block" : "none";
+        });
       }
-    
-      // script タグを動的に生成して JSONP リクエスト
-      (function() {
-        const namespace = 'kfreelance.github.io';  // あなたのサイト用にユニーク
-        const key       = 'homepage-visits';       // カウント用キー
+    </script>
+
+    <!-- CountAPI JSONP 訪問者数カウント -->
+    <script>
+      // JSONP コールバック（global）
+      function countCallback(data) {
+        document.getElementById("visitCount").innerText = data.value;
+      }
+
+      // 即時関数で script タグを動的生成
+      (function () {
+        const namespace = "kfreelance.github.io"; // ユニークな名称
+        const key = "homepage-visits"; // カウント用キー
         const url = `https://api.countapi.xyz/hit/${namespace}/${key}?callback=countCallback`;
-        const s   = document.createElement('script');
-        s.src     = url;
+        const s = document.createElement("script");
+        s.src = url;
         document.body.appendChild(s);
       })();
     </script>
